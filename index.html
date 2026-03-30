@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Succession Advisory | Strategic Exit Services</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --navy: #0f172a;
+            --slate: #334155;
+            --stone: #f8f9fa;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Source Sans Pro', sans-serif; 
+            background-color: var(--white); 
+            color: var(--navy); 
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; color: var(--navy); }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-link { color: var(--navy); text-decoration: none; font-size: 0.9rem; font-weight: 600; border: 1px solid var(--navy); padding: 10px 25px; transition: 0.3s; }
+        .nav-link:hover { background: var(--navy); color: white; }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 120px 10%;
+            background-color: var(--stone);
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 25px; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 40px; color: var(--slate); }
+
+        /* --- Long-Form Content Section --- */
+        section { padding: 100px 10%; max-width: 1200px; margin: 0 auto; }
+        .section-header { margin-bottom: 60px; border-left: 4px solid var(--navy); padding-left: 30px; }
+        .section-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
+
+        .content-block { margin-bottom: 80px; }
+        .content-block p { font-size: 1.15rem; margin-bottom: 25px; color: var(--slate); }
+
+        /* --- The Process Grid --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
+        .card { padding: 40px; border: 1px solid var(--border); background: var(--stone); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+        .card p { font-size: 1rem; color: var(--slate); }
+
+        /* --- Professional Disclosure/Stats --- */
+        .banner { background: var(--navy); color: white; padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat h4 { font-size: 2.2rem; margin-bottom: 5px; color: #fff; font-family: sans-serif; }
+        .stat p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
+
+        /* --- Contact/Form Section --- */
+        .form-container { padding: 100px 10%; background: #fff; }
+        .form-wrap { max-width: 600px; margin: 0 auto; border: 1px solid var(--border); padding: 50px; }
+        
+        .field { margin-bottom: 25px; }
+        label { display: block; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; color: var(--navy); }
+        input, select, textarea { 
+            width: 100%; border: 1px solid var(--border); padding: 15px; 
+            font-size: 1rem; font-family: 'Source Sans Pro', sans-serif; outline: none; transition: 0.3s;
+        }
+        input:focus { border-color: var(--navy); }
+        
+        .submit-btn { 
+            background: var(--navy); color: white; width: 100%; padding: 20px; 
+            border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; 
+            cursor: pointer; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #1e293b; }
+
+        footer { padding: 80px 10%; background: var(--stone); color: var(--slate); font-size: 0.85rem; border-top: 1px solid var(--border); }
+        .disclaimer { max-width: 800px; margin-top: 40px; line-height: 1.6; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 5%; }
+            .hero { padding: 80px 5%; }
+            .nav-link { display: none; } /* Simplify mobile nav */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Strategic Succession Advisory</div>
+        <a href="#inquiry" class="nav-link">Private Inquiry</a>
+    </nav>
+
+    <header class="hero">
+        <h1 data-aos="fade-up">Professional Guidance for the <br> Sale of Your Business.</h1>
+        <p data-aos="fade-up" data-aos-delay="200">We assist business owners in the profitable transition of their life's work through a structured, confidential, and objective advisory process.</p>
+        <a href="#inquiry" class="nav-link" data-aos="fade-up" data-aos-delay="400">Request a Confidential Valuation</a>
+    </header>
+
+    <div class="banner">
+        <div class="stat" data-aos="zoom-in">
+            <h4>$250k+</h4>
+            <p>Annual Net Profit Range</p>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+            <h4>100%</h4>
+            <p>Confidential Disclosure</p>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+            <h4>2026</h4>
+            <p>Current Market Data</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-header" data-aos="fade-right">
+            <h2>The Reality of the Current Market</h2>
+            <p>Objective data for the retiring business owner.</p>
+        </div>
+
+        <div class="content-block" data-aos="fade-up">
+            <p>The Small-to-Medium Business (SMB) market is currently experiencing a historic volume of transitions. However, statistical evidence remains consistent: only a minority of companies listed for sale reach a successful close. This failure rate is typically the result of inadequate financial preparation, improper market positioning, or a breach in operational confidentiality.</p>
+            <p>Our role as advisors is to mitigate these risks. We provide a bridge between your current operational state and a successful hand-off to a qualified successor.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <h3>Financial Recasting</h3>
+                <p>We analyze your historical financials to identify discretionary expenses and add-backs. This process ensures that your "Seller's Discretionary Earnings" (SDE) are accurately represented to potential buyers.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Confidential Marketing</h3>
+                <p>We utilize "Blind Business Profiles" to solicit interest without revealing your company's identity. This protects your relationships with employees, customers, and vendors during the process.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Buyer Qualification</h3>
+                <p>Every prospective buyer is vetted for financial liquidity and operational experience. We ensure that only high-intent, qualified individuals or groups receive sensitive information.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--stone); max-width: 100%;">
+        <div class="wrapper" style="max-width: 1200px; margin: 0 auto; padding: 0 10%;">
+            <div class="section-header" data-aos="fade-right">
+                <h2>The Advisory Process</h2>
+                <p>A step-by-step approach to a successful exit.</p>
+            </div>
+            <div class="content-block" data-aos="fade-up">
+                <p><strong>1. Assessment:</strong> We begin with a deep-dive audit of your financials and operations to determine a defensible market range for your business.</p>
+                <p><strong>2. Documentation:</strong> We prepare a Comprehensive Information Memorandum (CIM) that details your company's strengths, opportunities, and financial history.</p>
+                <p><strong>3. Vetting & Negotiation:</strong> We manage the inquiry process, oversee NDAs, and lead negotiations to secure a Letter of Intent (LOI) that reflects your goals.</p>
+                <p><strong>4. Due Diligence & Closing:</strong> We coordinate with your legal and tax professionals to manage the buyer's audit and drive the transaction to a final wire transfer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-container" id="inquiry">
+        <div class="form-wrap" data-aos="zoom-in">
+            <h2 style="text-align: center; margin-bottom: 10px;">Confidential Inquiry</h2>
+            <p style="text-align: center; color: var(--slate); margin-bottom: 40px;">Speak with an advisor about your goals.</p>
+            
+            <form name="advisory-contact" method="POST" data-netlify="true">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="field">
+                    <label>Business Industry</label>
+                    <input type="text" name="industry" placeholder="e.g. Manufacturing, HVAC, Distribution" required>
+                </div>
+                <div class="field">
+                    <label>Approximate Annual Net Profit</label>
+                    <select name="profit">
+                        <option>$250k - $1M</option>
+                        <option>$1M - $5M</option>
+                        <option>$5M+</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Primary Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <button type="submit" class="submit-btn">Request Exit Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Strategic Succession Advisory</div>
+        <div class="disclaimer">
+            <strong>Disclosures:</strong> We are an independent advisory firm specializing in business succession and exit planning. We do not act as licensed securities brokers, dealers, or investment advisors. All services are intended to assist the owner in the preparation and execution of a business sale. All financial information provided is subject to formal due diligence and should be reviewed by your legal and accounting counsel.
+        </div>
+        <p style="margin-top: 40px;">&copy; 2026 Advisory Services Group LLC. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+</body>
+</html>
