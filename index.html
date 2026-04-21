@@ -1,223 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Succession Advisory | Strategic Exit Services</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Retire Plan | Sell Your Business with Confidence</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
         :root {
             --navy: #0f172a;
-            --slate: #334155;
-            --stone: #f8f9fa;
+            --navy-2: #1e293b;
+            --slate: #475569;
+            --stone: #f8fafc;
             --border: #e2e8f0;
             --white: #ffffff;
+            --muted: #64748b;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: 'Source Sans Pro', sans-serif; 
-            background-color: var(--white); 
-            color: var(--navy); 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--white);
+            color: var(--navy);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; color: var(--navy); }
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            color: var(--navy);
+        }
 
-        /* --- Navigation --- */
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1200px, 100% - 40px);
+            margin: 0 auto;
+        }
+
         nav {
-            padding: 30px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            background: var(--white);
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
-        .logo { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-link { color: var(--navy); text-decoration: none; font-size: 0.9rem; font-weight: 600; border: 1px solid var(--navy); padding: 10px 25px; transition: 0.3s; }
-        .nav-link:hover { background: var(--navy); color: white; }
 
-        /* --- Hero Section --- */
+        .nav-inner {
+            width: min(1200px, 100% - 40px);
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--navy);
+            word-break: break-word;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            border: 1px solid var(--navy);
+            background: var(--navy);
+            color: var(--white);
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: 0.25s ease;
+            cursor: pointer;
+            min-height: 48px;
+        }
+
+        .btn:hover {
+            background: var(--navy-2);
+            border-color: var(--navy-2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
         .hero {
-            padding: 120px 10%;
-            background-color: var(--stone);
+            background: var(--stone);
+            padding: 110px 0 90px;
             text-align: center;
         }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 25px; line-height: 1.2; }
-        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 40px; color: var(--slate); }
 
-        /* --- Long-Form Content Section --- */
-        section { padding: 100px 10%; max-width: 1200px; margin: 0 auto; }
-        .section-header { margin-bottom: 60px; border-left: 4px solid var(--navy); padding-left: 30px; }
-        .section-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
-
-        .content-block { margin-bottom: 80px; }
-        .content-block p { font-size: 1.15rem; margin-bottom: 25px; color: var(--slate); }
-
-        /* --- The Process Grid --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
-        .card { padding: 40px; border: 1px solid var(--border); background: var(--stone); }
-        .card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { font-size: 1rem; color: var(--slate); }
-
-        /* --- Professional Disclosure/Stats --- */
-        .banner { background: var(--navy); color: white; padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .stat h4 { font-size: 2.2rem; margin-bottom: 5px; color: #fff; font-family: sans-serif; }
-        .stat p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
-
-        /* --- Contact/Form Section --- */
-        .form-container { padding: 100px 10%; background: #fff; }
-        .form-wrap { max-width: 600px; margin: 0 auto; border: 1px solid var(--border); padding: 50px; }
-        
-        .field { margin-bottom: 25px; }
-        label { display: block; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; color: var(--navy); }
-        input, select, textarea { 
-            width: 100%; border: 1px solid var(--border); padding: 15px; 
-            font-size: 1rem; font-family: 'Source Sans Pro', sans-serif; outline: none; transition: 0.3s;
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.18;
+            max-width: 860px;
+            margin: 0 auto 24px;
         }
-        input:focus { border-color: var(--navy); }
-        
-        .submit-btn { 
-            background: var(--navy); color: white; width: 100%; padding: 20px; 
-            border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; 
-            cursor: pointer; transition: 0.3s;
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto 34px;
+            font-size: 1.2rem;
+            color: var(--slate);
         }
-        .submit-btn:hover { background: #1e293b; }
 
-        footer { padding: 80px 10%; background: var(--stone); color: var(--slate); font-size: 0.85rem; border-top: 1px solid var(--border); }
-        .disclaimer { max-width: 800px; margin-top: 40px; line-height: 1.6; opacity: 0.7; }
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
 
-        @media (max-width: 768px) {
-            section { padding: 60px 5%; }
-            .hero { padding: 80px 5%; }
-            .nav-link { display: none; } /* Simplify mobile nav */
+        .stats {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            width: min(1200px, 100% - 40px);
+            margin: 0 auto;
+            padding: 56px 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat h4 {
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--white);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.9;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            margin-bottom: 44px;
+            border-left: 4px solid var(--navy);
+            padding-left: 22px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.9rem, 3vw, 2.4rem);
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .content-block h3 {
+            font-size: 1.45rem;
+            margin-bottom: 18px;
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            color: var(--slate);
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 42px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            background: var(--stone);
+            padding: 34px 30px;
+            min-height: 100%;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: var(--slate);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .alt-section {
+            background: var(--stone);
+        }
+
+        .process-list {
+            display: grid;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .process-step {
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .process-step p {
+            margin: 0;
+            color: var(--slate);
+            font-size: 1.05rem;
+        }
+
+        .form-section {
+            background: var(--white);
+        }
+
+        .form-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            border: 1px solid var(--border);
+            padding: 48px;
+            background: var(--white);
+        }
+
+        .form-wrap h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .form-wrap > p {
+            text-align: center;
+            color: var(--slate);
+            margin-bottom: 34px;
+            font-size: 1.05rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            padding: 15px 14px;
+            font-size: 1rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--navy);
+            background: var(--white);
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        footer {
+            background: var(--stone);
+            border-top: 1px solid var(--border);
+            padding: 64px 0;
+        }
+
+        .footer-inner {
+            width: min(1200px, 100% - 40px);
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 24px;
+            max-width: 850px;
+            color: var(--slate);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            opacity: 0.92;
+        }
+
+        .copyright {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid,
+            .stats-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-wrap {
+                padding: 34px 22px;
+            }
+
+            .nav-inner {
+                padding: 16px 0;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .logo {
+                font-size: 0.92rem;
+            }
+
+            .hero {
+                padding: 84px 0 70px;
+            }
+
+            .hero p {
+                font-size: 1.08rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding: 68px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header {
+                padding-left: 16px;
+            }
+
+            .card,
+            .process-step {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <div class="logo">Strategic Succession Advisory</div>
-        <a href="#inquiry" class="nav-link">Private Inquiry</a>
+        <div class="nav-inner">
+            <div class="logo">Business Retire Plan</div>
+            <a href="https://forms.gle/ArwfdRJRagYdwyA58" target="_blank" class="btn btn-outline">Start A Conversation</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1 data-aos="fade-up">Professional Guidance for the <br> Sale of Your Business.</h1>
-        <p data-aos="fade-up" data-aos-delay="200">We assist business owners in the profitable transition of their life's work through a structured, confidential, and objective advisory process.</p>
-        <a href="#inquiry" class="nav-link" data-aos="fade-up" data-aos-delay="400">Request a Confidential Valuation</a>
+        <div class="container">
+            <h1 data-aos="fade-up">Selling your business? It’s hard to know where to begin.</h1>
+            <p data-aos="fade-up" data-aos-delay="150">Selling your business is a big decision. We provide professional guidance to help business owners sell their company.</p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://forms.gle/ArwfdRJRagYdwyA58" target="_blank" class="btn">Request Free Consultation</a>
+            </div>
+        </div>
     </header>
 
-    <div class="banner">
-        <div class="stat" data-aos="zoom-in">
-            <h4>$250k+</h4>
-            <p>Annual Net Profit Range</p>
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat" data-aos="zoom-in">
+                <h4>80%</h4>
+                <p>Of Companies Fail to Sell</p>
+            </div>
+            <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+                <h4>20%</h4>
+                <p>Of Companies Successfully Sell</p>
+            </div>
+            <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+                <h4>7 to 14 Months</h4>
+                <p>Industry Average Listing to Close</p>
+            </div>
         </div>
-        <div class="stat" data-aos="zoom-in" data-aos-delay="100">
-            <h4>100%</h4>
-            <p>Confidential Disclosure</p>
-        </div>
-        <div class="stat" data-aos="zoom-in" data-aos-delay="200">
-            <h4>2026</h4>
-            <p>Current Market Data</p>
-        </div>
-    </div>
+    </section>
 
     <section>
-        <div class="section-header" data-aos="fade-right">
-            <h2>The Reality of the Current Market</h2>
-            <p>Objective data for the retiring business owner.</p>
-        </div>
-
-        <div class="content-block" data-aos="fade-up">
-            <p>The Small-to-Medium Business (SMB) market is currently experiencing a historic volume of transitions. However, statistical evidence remains consistent: only a minority of companies listed for sale reach a successful close. This failure rate is typically the result of inadequate financial preparation, improper market positioning, or a breach in operational confidentiality.</p>
-            <p>Our role as advisors is to mitigate these risks. We provide a bridge between your current operational state and a successful hand-off to a qualified successor.</p>
-        </div>
-
-        <div class="grid">
-            <div class="card" data-aos="fade-up">
-                <h3>Financial Recasting</h3>
-                <p>We analyze your historical financials to identify discretionary expenses and add-backs. This process ensures that your "Seller's Discretionary Earnings" (SDE) are accurately represented to potential buyers.</p>
+        <div class="container">
+            <div class="section-header" data-aos="fade-right">
+                <h2>The Reality Of The Current Market</h2>
+                <p>Objective context for owners considering a transition.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Confidential Marketing</h3>
-                <p>We utilize "Blind Business Profiles" to solicit interest without revealing your company's identity. This protects your relationships with employees, customers, and vendors during the process.</p>
+
+            <div class="content-block" data-aos="fade-up">
+                <h3>Selling a business is hard</h3>
+                <p>The Small-to-Medium Business (SMB) market can be extremely inefficient when it comes to selling your business.</p>
+                <p>Only 20% of companies listed for sale successfully change hands.</p>
+                <p>Our role as advisors is to mitigate these challenges. We help business owners identify the right buyer, protect their employees, and secure the value they’ve created over time with long hours and hard work.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Buyer Qualification</h3>
-                <p>Every prospective buyer is vetted for financial liquidity and operational experience. We ensure that only high-intent, qualified individuals or groups receive sensitive information.</p>
+
+            <div class="grid">
+                <div class="card" data-aos="fade-up">
+                    <h3>Valuation &amp; Preparation</h3>
+                    <p>We work with our sellers to prepare financials and establish a defensible starting market valuation.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Due Diligence &amp; Buyer Screening</h3>
+                    <p>Our team can distribute due diligence information confidentially and securely to qualified buyers.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Negotiation, Execution &amp; Closing</h3>
+                    <p>We help manage buyer interest and negotiate terms to move toward a successful close.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section style="background: var(--stone); max-width: 100%;">
-        <div class="wrapper" style="max-width: 1200px; margin: 0 auto; padding: 0 10%;">
+    <section class="alt-section">
+        <div class="container">
             <div class="section-header" data-aos="fade-right">
                 <h2>The Advisory Process</h2>
-                <p>A step-by-step approach to a successful exit.</p>
+                <p>A structured process designed to move from inquiry to close.</p>
             </div>
-            <div class="content-block" data-aos="fade-up">
-                <p><strong>1. Assessment:</strong> We begin with a deep-dive audit of your financials and operations to determine a defensible market range for your business.</p>
-                <p><strong>2. Documentation:</strong> We prepare a Comprehensive Information Memorandum (CIM) that details your company's strengths, opportunities, and financial history.</p>
-                <p><strong>3. Vetting & Negotiation:</strong> We manage the inquiry process, oversee NDAs, and lead negotiations to secure a Letter of Intent (LOI) that reflects your goals.</p>
-                <p><strong>4. Due Diligence & Closing:</strong> We coordinate with your legal and tax professionals to manage the buyer's audit and drive the transaction to a final wire transfer.</p>
+
+            <div class="process-list">
+                <div class="process-step" data-aos="fade-up">
+                    <p><strong>1. Assessment:</strong> We begin with a deep-dive review of your financials and operations to determine a defensible market range for your business.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="50">
+                    <p><strong>2. Documentation:</strong> We prepare a comprehensive information package that details your company’s strengths, opportunities, and financial history.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <p><strong>3. Confidential Data Room:</strong> We host and organize a confidential digital data room under NDA to securely exchange deal documents and financials with interested parties.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                    <p><strong>4. Vetting &amp; Negotiation:</strong> We manage the inquiry process, oversee NDAs, and lead negotiations to secure a letter of intent that reflects your goals.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <p><strong>5. Due Diligence &amp; Closing:</strong> We coordinate with your legal and tax professionals to manage the buyer’s diligence process and drive the transaction toward closing.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="form-container" id="inquiry">
-        <div class="form-wrap" data-aos="zoom-in">
-            <h2 style="text-align: center; margin-bottom: 10px;">Confidential Inquiry</h2>
-            <p style="text-align: center; color: var(--slate); margin-bottom: 40px;">Speak with an advisor about your goals.</p>
-            
-            <form name="advisory-contact" method="POST" data-netlify="true">
-                <div class="field">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required>
-                </div>
-                <div class="field">
-                    <label>Business Industry</label>
-                    <input type="text" name="industry" placeholder="e.g. Manufacturing, HVAC, Distribution" required>
-                </div>
-                <div class="field">
-                    <label>Approximate Annual Net Profit</label>
-                    <select name="profit">
-                        <option>$250k - $1M</option>
-                        <option>$1M - $5M</option>
-                        <option>$5M+</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label>Primary Phone Number</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                <button type="submit" class="submit-btn">Request Exit Consultation</button>
-            </form>
+    <section class="form-section" id="inquiry">
+        <div class="container">
+            <div class="form-wrap" data-aos="zoom-in">
+                <h2>Apply For Free Consultation</h2>
+                <p>Share a few details below and we will follow up confidentially.</p>
+
+                <form name="business-retire-plan-contact" method="POST" action="/thank-you" data-netlify="true" netlify netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="business-retire-plan-contact" />
+                    <input type="hidden" name="subject" value="New consultation request from Business Retire Plan" />
+                    <p style="display:none;">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Full Name</label>
+                            <input id="name" type="text" name="name" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" type="tel" name="phone" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="company">Name Of Company</label>
+                            <input id="company" type="text" name="company" required />
+                        </div>
+
+                        <div class="field full">
+                            <label for="website">Company Website (or N/A)</label>
+                            <input id="website" type="text" name="website" placeholder="https://yourcompany.com or N/A" />
+                        </div>
+
+                        <div class="field full">
+                            <label for="profit">Annual Net Profit</label>
+                            <select id="profit" name="profit" required>
+                                <option value="" disabled selected>Select annual net profit</option>
+                                <option>$250k - $1M</option>
+                                <option>$1M - $5M</option>
+                                <option>$5M+</option>
+                            </select>
+                        </div>
+
+                        <div class="field full">
+                            <label for="message">How Can We Help?</label>
+                            <textarea id="message" name="message" placeholder="Write as much as you want."></textarea>
+                        </div>
+
+                        <div class="field full">
+                            <button type="submit" class="btn submit-btn">Request Free Consultation</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="logo">Strategic Succession Advisory</div>
-        <div class="disclaimer">
-            <strong>Disclosures:</strong> We are an independent advisory firm specializing in business succession and exit planning. We do not act as licensed securities brokers, dealers, or investment advisors. All services are intended to assist the owner in the preparation and execution of a business sale. All financial information provided is subject to formal due diligence and should be reviewed by your legal and accounting counsel.
+        <div class="footer-inner">
+            <div class="logo">Business Retire Plan</div>
+            <div class="footer-text">
+                <strong>Disclosures:</strong> We are an independent advisory platform focused on business succession and exit planning. We do not act as licensed securities brokers, dealers, or investment advisers. Any information submitted through this website is reviewed on a confidential basis and is subject to follow-up review, diligence, and professional consultation.
+            </div>
+            <div class="copyright">&copy; 2026 Business Retire Plan. All rights reserved.</div>
         </div>
-        <p style="margin-top: 40px;">&copy; 2026 Advisory Services Group LLC. All rights reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 800,
-        once: true,
-      });
+        AOS.init({
+            duration: 800,
+            once: true
+        });
     </script>
 </body>
 </html>
